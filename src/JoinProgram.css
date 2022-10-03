@@ -1,0 +1,70 @@
+.joinProgram {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 436px;
+    width: 100%;
+    background: url("./images/people.jpg");
+}
+
+.joinProgram_cover {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: rgba(5, 17, 18, 0.5);
+    height: 436px;
+    width: 100%;
+}
+
+.joinHeader {
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: 700;
+    margin: 0;
+    text-align: center;
+}
+
+.joinText {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 24px;
+    line-height: 32px;
+    margin-bottom: 60px;
+}
+
+.joinForm {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.joinMail {
+    color: white;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 10px 0 10px 20px;
+    border: none;
+    width: 380px;
+    height: 16px;
+    margin-right: 29px;
+}
+
+.joinBtns {
+    display: flex;
+    padding: 5.5px 17px;
+    color: white;
+    font-family: 'Oswald', sans-serif;
+    background: #55C2D8;
+    border-radius: 18px;
+    font-size: 14px;
+    line-height: 26px;
+    letter-spacing: 0.1em;
+    font-weight: 400;
+    border: none;
+}
+
+.joinBtns:disabled {
+    opacity: 0.5;
+}
