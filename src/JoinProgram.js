@@ -46,7 +46,7 @@ export default function JoinProgram() {
             },
             body: JSON.stringify({})
         })
-    }, [dispatch, clickedSubBTN])
+    }, [dispatch, clickedunSubBTN])
 
 
 
