@@ -12,13 +12,13 @@ export default function JoinProgram() {
     const [clickedunSubBTN, setclickedunSubBTN] = useState(false);
     // const [isSubscribed, setIsSubscribed] = useState(false);
     const [disabledBtn, setdisabledBtn] = useState(false);
-    const state = useSelector((state) => state);
+    // const state = useSelector((state) => state);
     const subscribe = useSelector((state) => state.subscribing);
     const unsubscribe = useSelector((state) => state.unsubscribing);
 
     // const { subscribe, unsubscribe } = state;
     const dispatch = useDispatch();
-    console.log(state);
+    // console.log(state);
 
     useEffect(() => {
         if (!clickedSubBTN) return;
@@ -31,10 +31,13 @@ export default function JoinProgram() {
             },
             body: JSON.stringify({ "email": email })
         })
-    }, [dispatch])
+    }, [dispatch, clickedSubBTN])
 
 
     useEffect(() => {
+        if (!clickedunSubBTN) return;
+        setdisabledBtn(true);
+
         dispatch(fetchUnsubscribe('http://localhost:3000/unsubscribe'), {
 
             method: "POST",
@@ -43,7 +46,7 @@ export default function JoinProgram() {
             },
             body: JSON.stringify({})
         })
-    }, [dispatch])
+    }, [dispatch, clickedSubBTN])
 
 
 
