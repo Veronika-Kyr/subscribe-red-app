@@ -10,9 +10,6 @@ const sectionSlice = createSlice({
         shouldShow(state) {
             state.showSect = !state.showSect
         },
-        shouldHide(state) {
-            state.showSect = false
-        },
     },
 });
 

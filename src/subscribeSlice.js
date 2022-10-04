@@ -3,8 +3,14 @@ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
 
 export const fetchSubscribe = createAsyncThunk(
     "subscribe/fetch",
-    async (apiUrl) => {
-        const response = await fetch(apiUrl, {}
+    async function ({ api: apiUrl, email: mail }) {
+        const response = await fetch(apiUrl, {
+            method: "POST",
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(mail ? mail : {})
+        }
         );
         return response.json();
     }
@@ -16,9 +22,16 @@ const subscribeSlice = createSlice({
     reducers: {},
     extraReducers: (builder) => {
         builder.addCase(fetchSubscribe.fulfilled, (state, action) => {
-            state.data = action.payload
-            state.fetchStatus = 'success'
-            state.isSubscribed = true
+            if (!action.payload.error) {
+                state.data = action.payload
+                state.fetchStatus = 'success'
+                state.isSubscribed = !state.isSubscribed
+            }
+            else {
+                state.data = action.payload
+                state.fetchStatus = ''
+                state.isSubscribed = false
+            }
         })
             .addCase(fetchSubscribe.pending, (state) => {
                 state.fetchStatus = 'loading'

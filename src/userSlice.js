@@ -5,10 +5,8 @@ export const fetchUsers = createAsyncThunk(
     "users/fetch",
     async (apiUrl) => {
         const response = await fetch(apiUrl
-            /* `http://localhost:3000/community`*/
         );
-        // const data = await response.json(); /**/
-        return response.json(); /*data*/
+        return response.json();
     }
 );
 
