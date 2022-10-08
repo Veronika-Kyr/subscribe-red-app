@@ -3,7 +3,6 @@ import "./BigCommunity.css";
 import sectionSlice from './sectSlice';
 import { useDispatch, useSelector } from 'react-redux';
 import Users from './Users';
-// import { showSection } from './actions';
 
 
 export default function BigCommunity() {
@@ -11,7 +10,6 @@ export default function BigCommunity() {
     const dispatch = useDispatch();
     const { showSect } = useSelector((state) => state.section);
 
-    // const [showSect, setshowSect] = useState(true);
     return (
         <div className='bigCommunity'>
             <h2 className='headCommunity'>Big Community of <br />People Like You </h2>

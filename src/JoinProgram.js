@@ -22,20 +22,13 @@ export default function JoinProgram() {
         setclickedSubBTN(true);
         let umail = { "email": email };
         dispatch(fetchSubscribe({ api: 'http://localhost:3000/subscribe', email: umail }));
-        // console.log(subscribe.data);
     }
 
     function handleUnsubscribe(e) {
         e.preventDefault();
         setclickedunSubBTN(true);
         dispatch(fetchSubscribe({ api: 'http://localhost:3000/unsubscribe' }));
-        // console.log(subscribe.data);
     }
-
-    // useEffect(() => {
-    //     console.log(subscribe.data);
-
-    // }, [subscribe.data])
 
     useEffect(() => {
         if (!clickedSubBTN) return;
