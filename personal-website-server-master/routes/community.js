@@ -1,11 +1,11 @@
 const express = require('express');
 const router = express.Router();
-const {randomNumber} = require('../utils');
+const { randomNumber } = require('../utils');
 const FileStorage = require('../services/FileStorage');
 
 
 /* GET /community */
-router.get('/', async function(req, res) {
+router.get('/', async function (req, res) {
   try {
     const result = await FileStorage.readJsonFile(`community/${randomNumber(1, 3)}.json`);
     await res.json(result);
@@ -15,7 +15,7 @@ router.get('/', async function(req, res) {
   }
 });
 
-router.get('/:id', async function(req, res) {
+router.get('/:id', async function (req, res) {
   try {
     const community = await Promise.all([
       FileStorage.readJsonFile(`community/1.json`),

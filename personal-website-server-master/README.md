@@ -10,7 +10,7 @@
 
 ### Subscription
 #### POST `/subscribe`
-payload `{email: 'email@gmail.com'}`
+payload `{email: 'email@email.com'}`
 response `{"success": true}`
 
 #### POST `/unsubscribe`
