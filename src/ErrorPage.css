@@ -1,0 +1,21 @@
+.error {
+    background: rgb(226, 226, 226);
+    padding: 50px;
+    margin: 50px auto;
+    height: 436;
+    width: 700px;
+}
+
+.link {
+    color: #55C2D8;
+    font-weight: 600;
+    text-decoration: none;
+    text-align: left;
+}
+
+h1 {
+    font-family: 'Oswald', sans-serif;
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: 700;
+}
