@@ -3,3 +3,35 @@
   margin: 20px auto;
   position: relative;
 }
+
+h4 {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 17.5px;
+  color: rgba(70, 69, 71, 1);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+h5 {
+  font-family: 'Oswald', sans-serif;
+  text-align: center;
+  padding-left: 66px;
+  padding-right: 66px;
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  text-align: center;
+  color: rgba(102, 102, 102, 1);
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 200px;
+  width: 100%;
+}

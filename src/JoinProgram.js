@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./JoinProgram.css";
 import { fetchSubscribe } from './subscribeSlice';
 import { useDispatch, useSelector } from 'react-redux';
-
+import { Link } from 'react-router-dom';
 
 
 export default function JoinProgram() {
@@ -60,15 +60,20 @@ export default function JoinProgram() {
     }, [subscribe.isSubscribed, clickedunSubBTN])
 
     return (
-        <div className='joinProgram'>
-            <div className='joinProgram_cover'>
-                <h2 className='joinHeader'> Join Our Program</h2>
-                <p className='joinText'> Sed do eiusmod tempor incididunt <br /> ut labore et dolore magna aliqua</p>
-                <form className='joinForm'>
-                    {!subscribe.isSubscribed && (<input className='joinMail' placeholder='E-mail' value={email} type="text" onChange={getEmail} />)}
-                    {!subscribe.isSubscribed && (<input className='joinBtns' type="submit" value="SUBSCRIBE" disabled={disabledBtn} onClick={handleSubscribe} />)}
-                    {subscribe.isSubscribed && (<button className='joinBtns' type='submit' disabled={disabledBtn} onClick={handleUnsubscribe} >UNSUBSCRIBE</button>)}
-                </form>
+        <div className='main'>
+            <div className='navigation'>
+                <p><Link to='community'>Community</Link> </p>
+            </div>
+            <div className='joinProgram'>
+                <div className='joinProgram_cover'>
+                    <h2 className='joinHeader'> Join Our Program</h2>
+                    <p className='joinText'> Sed do eiusmod tempor incididunt <br /> ut labore et dolore magna aliqua</p>
+                    <form className='joinForm'>
+                        {!subscribe.isSubscribed && (<input className='joinMail' placeholder='E-mail' value={email} type="text" onChange={getEmail} />)}
+                        {!subscribe.isSubscribed && (<input className='joinBtns' type="submit" value="SUBSCRIBE" disabled={disabledBtn} onClick={handleSubscribe} />)}
+                        {subscribe.isSubscribed && (<button className='joinBtns' type='submit' disabled={disabledBtn} onClick={handleUnsubscribe} >UNSUBSCRIBE</button>)}
+                    </form>
+                </div>
             </div>
         </div>
     )
